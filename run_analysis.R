@@ -61,7 +61,7 @@ transformToString <- function(x){
 elementsAndActivity$Activity<-sapply(elementsAndActivity$Activity,transformToString)
 
 
-##Now, the code changes the names to more representative names and here comes the tricky part: the use of aggregate function. This will aggregate the data by Subjects and Activities and apply mean to the result aggregated values. The dataframe is shown and the code stores the data in a csv file
+##Now, the code changes the names to more representative names and here comes the tricky part: the use of aggregate function. This will aggregate the data by Subjects and Activities and apply mean to the result aggregated values. The dataframe is shown and the code stores the data in a txt file
 
 
 names(elementsAndActivity)<-gsub("^t", "time", names(elementsAndActivity))
@@ -74,4 +74,5 @@ aggdata<-aggregate(.~ Activity + Subject , data = elementsAndActivity,FUN=mean)
 
 View(aggdata)
 
-write.csv(aggdata,file="tidyData.csv")
+write.table(aggdata,file="tidyData.txt",row.name=FALSE)
+
