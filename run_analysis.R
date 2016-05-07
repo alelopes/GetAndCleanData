@@ -76,4 +76,4 @@ aggdata<-aggregate(.~ Activity + Subject , data = elementsAndActivity,FUN=mean)
 
 View(aggdata)
 
-write.table(aggdata,file="tidyData.txt",name=FALSE)
+write.table(aggdata,file="tidyData.txt",row.name=FALSE)
