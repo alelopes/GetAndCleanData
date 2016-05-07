@@ -64,14 +64,15 @@ transformToString <- function(x){
 	}else if(x==2){
 		return ("WALKING_UPSTAIRS")
 	}else if(x==3){
-		return ("WALKING_DOWNSTAIRS SITTING")
+		return ("WALKING_DOWNSTAIRS")
 	}else if(x==4){
+	  return ("SITTING")
+	}else if(x==5){
 		return ("STANDING")
 	}else{
 		return ("LAYING")
 	}
 }
-
 
 elementsAndActivity$Activity<-sapply(elementsAndActivity$Activity,transformToString)
 
